@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Bank {
     // Attribute
     // Wir erinnern uns an die Deklaration von Variablen
@@ -13,6 +15,8 @@ public class Bank {
     Account account0 = new Account();
     Account account1 = new Account();
     Account account2 = new Account();
+
+    Random zufall = new Random();
 
     // Methoden
     public void start() {
