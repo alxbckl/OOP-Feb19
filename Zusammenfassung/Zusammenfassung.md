@@ -72,3 +72,9 @@ Kann genutzt werden, um Daten zu initialisieren. <br>
 MUSS public sein und MUSS immer wie die Klasse heißen.
 
 ## Methodenaufruf mit Objektübergabe
+Wir können beim Aufruf von Methoden auch Objekte als Parameter übergeben. <br>
+Dadurch können wir Abläufe schreiben, die dann auf jedes Objekt, egal wie es heißt, anwendbar sind. <br>
+Wir sparen uns viel Schreibarbeit, zum Beispiel beim Ausgeben der Informationen über einen Kunden. <br>
+Dabei wird in der Parameterliste der Klassenname gefolgt von einem frei wählbaren Paramenternamen geschrieben. <br>
+private void printCustomerInfo(Customer customer) { ... }
+

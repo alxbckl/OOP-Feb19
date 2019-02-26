@@ -17,6 +17,7 @@ public class Bank {
     // Methoden
     public void start() {
         System.out.println("Comcave Bank");
+        newLine();
 
         // Kunde geht in die Bank und eröffnet neues Konto.
         // Kunde 0
@@ -32,12 +33,15 @@ public class Bank {
         // Kundeninfo ausgeben
         printCustomerInfo(customer0);
         printAccountInfo(account0);
+        newLine();
 
         printCustomerInfo(customer1);
         printAccountInfo(account1);
+        newLine();
 
         printCustomerInfo(customer2);
         printAccountInfo(account2);
+        newLine();
     }
 
     private void makeNewCustomer(Customer customer, String name, String lastName, int customerID) {
@@ -58,6 +62,9 @@ public class Bank {
     private void printAccountInfo(Account account) {
         System.out.println("AccountID:\t" + account.getAccountID());
         System.out.println("Balance:\t" + account.getBalance());
+    }
 
+    private void newLine() {
+        System.out.println();
     }
 }
