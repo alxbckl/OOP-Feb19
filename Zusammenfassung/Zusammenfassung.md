@@ -48,16 +48,27 @@ System.out.println(derDurchschnitt.gebeText());
 Werden verwendet, um den Zugriff auf Daten und Methoden zu beschränken.
 ### private
 Alles was private deklariert ist, ist von außerhalb der Klasse NICHT sichtbar. <br>
-Wenn wir dennoch Zugriff wollen, müssen wir getter oder setter definieren. 
+Wenn wir dennoch Zugriff wollen, müssen wir getter oder setter definieren. <br>
+Attribute (unsere Daten) deklariern wir IMMER als private.
 
 ### public
+Alles was public deklariert ist, ist von außerhalb der Klasse SICHTBAR. <br>
+Methoden, die von außen (von anderen Objekten aus) nutzbar sein sollen, werden als public deklariert.
+
 ### protected
 Wird noch ergänzt
 
 ## Getter und Setter
 ### Getter
+Wird verwendet, um ein privates Attribut auszulesen. <br>
+Gibt also den Wert des Attributs (der Daten) zurück.
 ### Setter
+Wird verwendet, um ein privates Attribut zu verändern. <br>
+Speichert also einen neuen Wert im Attribut ab.
 
 ## Konstruktor
+Wird genutzt, um Objekte zu erzeugen. <br>
+Kann genutzt werden, um Daten zu initialisieren. <br>
+MUSS public sein und MUSS immer wie die Klasse heißen.
 
 ## Methodenaufruf mit Objektübergabe

@@ -7,8 +7,8 @@ public class Account {
     // Kundenummer
     private int customerID;
 
-    // Konstruktor
-    public Account(int accountID, int customerID) {
+    // InitAccount
+    public void initAccount(int accountID, int customerID) {
         this.accountID = accountID;
         this.customerID = customerID;
     }

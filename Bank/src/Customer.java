@@ -10,6 +10,13 @@ public class Customer {
     private String street;
     private int houseNumber;
 
+    // Init Customer
+    public void initCustomer(String name, String lastName, int customerID) {
+        this.name = name;
+        this.lastName = lastName;
+        this.customerID = customerID;
+    }
+
     // Getter
     public String getName() {
         return name;
