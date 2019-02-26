@@ -43,4 +43,21 @@ String gebeText() { <br>
 Bei Aufruf der Methode haben wir die Möglichkeit den Rückgabewert aufzugreifen.
 System.out.println(derDurchschnitt.gebeText());
 
+# Tag 3
+## Sichtbarkeiten
+Werden verwendet, um den Zugriff auf Daten und Methoden zu beschränken.
+### private
+Alles was private deklariert ist, ist von außerhalb der Klasse NICHT sichtbar. <br>
+Wenn wir dennoch Zugriff wollen, müssen wir getter oder setter definieren. 
 
+### public
+### protected
+Wird noch ergänzt
+
+## Getter und Setter
+### Getter
+### Setter
+
+## Konstruktor
+
+## Methodenaufruf mit Objektübergabe

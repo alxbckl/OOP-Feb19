@@ -4,7 +4,7 @@ public class Customer {
     // Name
     private String name;
     private String lastName;
-    // Addres
+    // Address
     private int postCode;
     private String city;
     private String street;
@@ -51,5 +51,8 @@ public class Customer {
     }
     public void setHouseNumber(int houseNumber) {
         this.houseNumber = houseNumber;
+    }
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
     }
 }
