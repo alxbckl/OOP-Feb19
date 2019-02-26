@@ -30,6 +30,21 @@ public class Bank {
         makeNewCustomer(customer2,"Martha", "Maier", 0002);
         makeNewAccount(account2, 1002, 0002);
 
+        // Kunden zahlen ein
+        // Kunde0 zahlt 3x50€ auf sein Konto ein
+        depositMoney(account0, customer0, 50);
+        depositMoney(account0, customer0, 50);
+        depositMoney(account0, customer0, 50);
+        newLine();
+
+        // Kunde1 zahlt 370€ auf sein Konto ein
+        depositMoney(account1, customer1, 370);
+        newLine();
+
+        // Kunde 2 zahl 65€ auf sein Konto ein
+        depositMoney(account2, customer2, 65000);
+        newLine();
+
         // Kundeninfo ausgeben
         printCustomerInfo(customer0);
         printAccountInfo(account0);
@@ -61,7 +76,14 @@ public class Bank {
 
     private void printAccountInfo(Account account) {
         System.out.println("AccountID:\t" + account.getAccountID());
-        System.out.println("Balance:\t" + account.getBalance());
+        System.out.println("Balance:\t" + account.getBalance() + "€");
+    }
+
+    // Zahlt Geld auf ein Konto ein
+    // Nimmt 2 Parameter an: Welches Konto? Wie viel?
+    private void depositMoney(Account account, Customer customer, int amount) {
+        account.deposit(amount);
+        System.out.println(amount + "€ has been deposited to the account from " + customer.getName() + " " + customer.getLastName() + ".");
     }
 
     private void newLine() {
