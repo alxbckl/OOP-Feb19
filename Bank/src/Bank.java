@@ -40,11 +40,13 @@ public class Bank {
         // Kunde1 zahlt 370€ auf sein Konto ein
         depositMoney(account1, customer1, 370);
         withdrawMoney(account1, customer1, 550);
+
         newLine();
 
         // Kunde 2 zahl 65€ auf sein Konto ein
         depositMoney(account2, customer2, 65000);
         withdrawMoney(account2, customer2, 12000);
+
         newLine();
 
         // Kundeninfo ausgeben
@@ -94,7 +96,10 @@ public class Bank {
             System.out.println(amount + "€ has been withdrawn from the account of " + customer.getName() + " " + customer.getLastName() + ".");
         }
         else {
-            System.out.println("There is not enough credit on the account of " + customer.getName() + " " + customer.getLastName() + "!");
+
+            System.out.println("There is not enough credit to withdraw " + amount + "€ on the account of " + customer.getName() + " " + customer.getLastName() + "!");
+            System.out.println(account.getBalance() + " has been withdrawn!");
+            account.withdraw(account.getBalance());
         }
     }
 
