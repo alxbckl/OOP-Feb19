@@ -1,6 +1,10 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        // Objekt Bank erstellen
+        Bank bank = new Bank();
+
+        // Bank öffnen
+        bank.start();
     }
 }
