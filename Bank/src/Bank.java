@@ -39,10 +39,12 @@ public class Bank {
 
         // Kunde1 zahlt 370€ auf sein Konto ein
         depositMoney(account1, customer1, 370);
+        withdrawMoney(account1, customer1, 550);
         newLine();
 
         // Kunde 2 zahl 65€ auf sein Konto ein
         depositMoney(account2, customer2, 65000);
+        withdrawMoney(account2, customer2, 12000);
         newLine();
 
         // Kundeninfo ausgeben
@@ -83,7 +85,17 @@ public class Bank {
     // Nimmt 2 Parameter an: Welches Konto? Wie viel?
     private void depositMoney(Account account, Customer customer, int amount) {
         account.deposit(amount);
-        System.out.println(amount + "€ has been deposited to the account from " + customer.getName() + " " + customer.getLastName() + ".");
+        System.out.println(amount + "€ has been deposited to the account of " + customer.getName() + " " + customer.getLastName() + ".");
+    }
+
+    private void withdrawMoney(Account account, Customer customer, int amount) {
+        if(account.getBalance() >= amount) {
+            account.withdraw(amount);
+            System.out.println(amount + "€ has been withdrawn from the account of " + customer.getName() + " " + customer.getLastName() + ".");
+        }
+        else {
+            System.out.println("There is not enough credit on the account of " + customer.getName() + " " + customer.getLastName() + "!");
+        }
     }
 
     private void newLine() {
