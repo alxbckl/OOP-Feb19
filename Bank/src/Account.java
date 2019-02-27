@@ -29,9 +29,11 @@ public class Account {
     // Auszahlen
     public void withdraw(int amount) {
         balance -= amount;
+        // balance = balance - amount;
     }
     // Einzahlen
     public void deposit(int amount) {
         balance += amount;
+        // balance = balance + amount;
     }
 }

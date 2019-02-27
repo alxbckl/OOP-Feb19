@@ -10,6 +10,10 @@ public class Customer {
     private String street;
     private int houseNumber;
 
+    public Customer() {
+        System.out.println("One customer has been added.");
+    }
+
     // Init Customer
     public void initCustomer(String name, String lastName, int customerID) {
         this.name = name;

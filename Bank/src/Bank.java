@@ -1,4 +1,4 @@
-import java.util.Random;
+
 
 public class Bank {
     // Attribute
@@ -6,17 +6,17 @@ public class Bank {
     // Datentyp Variablennamen
     // Bei Objekten ist das ganz ähnlich
     // Klassennamen Objektnamen
-    // Kunde Objekt
+    // Kunde Objektc
     Customer customer0 = new Customer();
     Customer customer1 = new Customer();
     Customer customer2 = new Customer();
+
 
     // Konto Objekt
     Account account0 = new Account();
     Account account1 = new Account();
     Account account2 = new Account();
 
-    Random zufall = new Random();
 
     // Methoden
     public void start() {
@@ -25,13 +25,13 @@ public class Bank {
 
         // Kunde geht in die Bank und eröffnet neues Konto.
         // Kunde 0
-        makeNewCustomer(customer0,"Max", "Mustermann", 0000);
+        makeNewCustomer(customer0, "Max", "Mustermann", 0000);
         makeNewAccount(account0, 1000, 0000);
         // Kunde 1
-        makeNewCustomer(customer1,"Peter", "Pan", 0001);
+        makeNewCustomer(customer1, "Peter", "Pan", 0001);
         makeNewAccount(account1, 1001, 0001);
         // Kunde 2
-        makeNewCustomer(customer2,"Martha", "Maier", 0002);
+        makeNewCustomer(customer2, "Martha", "Maier", 0002);
         makeNewAccount(account2, 1002, 0002);
 
         // Kunden zahlen ein
@@ -54,6 +54,21 @@ public class Bank {
         newLine();
 
         // Kundeninfo ausgeben
+        printCustomerInfo(customer0);
+        printAccountInfo(account0);
+        newLine();
+
+        printCustomerInfo(customer1);
+        printAccountInfo(account1);
+        newLine();
+
+        printCustomerInfo(customer2);
+        printAccountInfo(account2);
+        newLine();
+
+        transferMoney(account0, account1, customer0, customer1, 5);
+        newLine();
+
         printCustomerInfo(customer0);
         printAccountInfo(account0);
         newLine();
@@ -95,16 +110,42 @@ public class Bank {
     }
 
     private void withdrawMoney(Account account, Customer customer, int amount) {
-        if(account.getBalance() >= amount) {
+        if (account.getBalance() >= amount) {
             account.withdraw(amount);
             System.out.println(amount + "€ has been withdrawn from the account of " + customer.getName() + " " + customer.getLastName() + ".");
-        }
-        else {
+        } else {
 
             System.out.println("There is not enough credit to withdraw " + amount + "€ on the account of " + customer.getName() + " " + customer.getLastName() + "!");
             System.out.println(account.getBalance() + " has been withdrawn!");
             account.withdraw(account.getBalance());
         }
+    }
+
+    private void transferMoney(Account sourceAccount, Account destinationAccount,
+           Customer sourceCustomer, Customer destinationCustomer, int amount) {
+        // Geld soll von sourceAccount auf destinationAccount überwiesen werden.
+        // Dazu müssen wir prüfen, ob der sourceAccount genug Guthaben hat.
+        // Wenn ja, dann wird überwiesen
+        // Wenn nein, dann soll Meldung gegeben werden, dass nicht genug Guthaben vorhanden ist.
+
+        if(sourceAccount.getBalance() >= amount) {
+            // Geld soll von sourceAccount abgehoben werden
+            sourceAccount.withdraw(amount);
+            // und dem destination Account gutgeschrieben werden.
+            destinationAccount.deposit(amount);
+            // Ausgeben von wem und an wen und wie viel
+            // "240€ has been transfered from Peter Pan to Martha Meier."
+            System.out.println(amount + "€ has been transfered from " +
+                    sourceCustomer.getName() + " " + sourceCustomer.getLastName() + " to " +
+                    destinationCustomer.getName() + " " + destinationCustomer.getLastName() + ".");
+        }
+        else {
+            // There is not enough credit on the account of Marta Meiner to transfer 200€ to Peter Pan.
+            System.out.println("There is not enough credit on the account of " +
+                    sourceCustomer.getName() + " " + sourceCustomer.getLastName() + " to transfer " +
+                    amount + "€ to " + destinationCustomer.getName() + " " + destinationCustomer.getLastName() + ".");
+        }
+
     }
 
     private void newLine() {
