@@ -1,5 +1,6 @@
 // Importieren des Scanners
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Bank {
     // Attribute
@@ -8,15 +9,11 @@ public class Bank {
     // Bei Objekten ist das ganz ähnlich
     // Klassennamen Objektnamen
     // Kunde Objektc
-    Customer customer0 = new Customer();
-    Customer customer1 = new Customer();
-    Customer customer2 = new Customer();
+
+    ArrayList<Customer> customers = new ArrayList<Customer>();
+    ArrayList<Account> accounts = new ArrayList<Account>();
 
 
-    // Konto Objekt
-    Account account0 = new Account();
-    Account account1 = new Account();
-    Account account2 = new Account();
 
     // Scanner
     Scanner sc = new Scanner(System.in);
@@ -37,66 +34,77 @@ public class Bank {
 
     // Methoden
     public void start() {
-//        System.out.println("Comcave Bank");
-//        newLine();
-//
-//        // Kunde geht in die Bank und eröffnet neues Konto.
-//        // Kunde 0
-//        makeNewCustomer(customer0, "Max", "Mustermann", 0000);
-//        makeNewAccount(account0, 1000, 0000);
-//        // Kunde 1
-//        makeNewCustomer(customer1, "Peter", "Pan", 0001);
-//        makeNewAccount(account1, 1001, 0001);
-//        // Kunde 2
-//        makeNewCustomer(customer2, "Martha", "Maier", 0002);
-//        makeNewAccount(account2, 1002, 0002);
-//
-//        // Kunden zahlen ein
-//        // Kunde0 zahlt 3x50€ auf sein Konto ein
-//        depositMoney(account0, customer0, 50);
-//        depositMoney(account0, customer0, 50);
-//        depositMoney(account0, customer0, 50);
-//        newLine();
-//
-//        // Kunde1 zahlt 370€ auf sein Konto ein
-//        depositMoney(account1, customer1, 370);
-//        withdrawMoney(account1, customer1, 550);
-//
-//        newLine();
-//
-//        // Kunde 2 zahl 65€ auf sein Konto ein
-//        depositMoney(account2, customer2, 65000);
-//        withdrawMoney(account2, customer2, 12000);
-//
-//        newLine();
-//
-//        // Kundeninfo ausgeben
-//        printCustomerInfo(customer0);
-//        printAccountInfo(account0);
-//        newLine();
-//
-//        printCustomerInfo(customer1);
-//        printAccountInfo(account1);
-//        newLine();
-//
-//        printCustomerInfo(customer2);
-//        printAccountInfo(account2);
-//        newLine();
-//
-//        transferMoney(account0, account1, customer0, customer1, 5);
-//        newLine();
-//
-//        printCustomerInfo(customer0);
-//        printAccountInfo(account0);
-//        newLine();
-//
-//        printCustomerInfo(customer1);
-//        printAccountInfo(account1);
-//        newLine();
-//
-//        printCustomerInfo(customer2);
-//        printAccountInfo(account2);
-//        newLine();
+        System.out.println("Comcave Bank");
+        newLine();
+
+        // Kunde geht in die Bank und eröffnet neues Konto.
+        // Kunde 0
+        customers.add(new Customer());
+        accounts.add(new Account());
+
+        customers.add(new Customer());
+        accounts.add(new Account());
+
+        customers.add(new Customer());
+        accounts.add(new Account());
+
+        customers.remove(1);
+
+        makeNewCustomer(customers.get(0), "Max", "Mustermann", 0000);
+        makeNewAccount(accounts.get(0), 1000, 0000);
+        // Kunde 1
+        makeNewCustomer(customers.get(1), "Peter", "Pan", 0001);
+        makeNewAccount(accounts.get(1), 1001, 0001);
+        // Kunde 2
+        makeNewCustomer(customers.get(2), "Martha", "Maier", 0002);
+        makeNewAccount(accounts.get(2), 1002, 0002);
+
+        // Kunden zahlen ein
+        // Kunde0 zahlt 3x50€ auf sein Konto ein
+        depositMoney(accounts.get(0), customers.get(0), 50);
+        //depositMoney(account0, customer0, 50);
+        //depositMoney(account0, customer0, 50);
+        newLine();
+
+        // Kunde1 zahlt 370€ auf sein Konto ein
+        depositMoney(accounts.get(1), customers.get(1), 370);
+        withdrawMoney(accounts.get(1), customers.get(1), 550);
+
+        newLine();
+
+        // Kunde 2 zahl 65€ auf sein Konto ein
+        depositMoney(accounts.get(2), customers.get(2), 65000);
+        withdrawMoney(accounts.get(2), customers.get(2), 12000);
+
+        newLine();
+
+        // Kundeninfo ausgeben
+        printCustomerInfo(customers.get(0));
+        printAccountInfo(accounts.get(0));
+        newLine();
+
+        printCustomerInfo(customers.get(1));
+        printAccountInfo(accounts.get(1));
+        newLine();
+
+        printCustomerInfo(customers.get(2));
+        printAccountInfo(accounts.get(2));
+        newLine();
+
+        transferMoney(accounts.get(0), accounts.get(1), customers.get(0), customers.get(1), 5);
+        newLine();
+
+        printCustomerInfo(customers.get(0));
+        printAccountInfo(accounts.get(0));
+        newLine();
+
+        printCustomerInfo(customers.get(1));
+        printAccountInfo(accounts.get(1));
+        newLine();
+
+        printCustomerInfo(customers.get(2));
+        printAccountInfo(accounts.get(2));
+        newLine();
 
         // Zustandsautomat
         // Mögliche Zustände:
@@ -107,35 +115,35 @@ public class Bank {
         // Nochmal?
         // Programm beenden
 
-        while(state <= CLOSE) {
-            switch(state) {
-                case WELCOME:
-                    welcome();
-                    state = MENU;
-                    break;
-                case MENU:
-
-                    break;
-                case NEWCUST:
-
-                    break;
-                case WITHDRAW:
-
-                    break;
-                case DEPOSIT:
-
-                    break;
-                case TRANSFER:
-
-                    break;
-                case AGAIN:
-
-                    break;
-                case CLOSE:
-
-                    break;
-            }
-        }
+//        while(state <= CLOSE) {
+//            switch(state) {
+//                case WELCOME:
+//                    welcome();
+//                    state = MENU;
+//                    break;
+//                case MENU:
+//
+//                    break;
+//                case NEWCUST:
+//
+//                    break;
+//                case WITHDRAW:
+//
+//                    break;
+//                case DEPOSIT:
+//
+//                    break;
+//                case TRANSFER:
+//
+//                    break;
+//                case AGAIN:
+//
+//                    break;
+//                case CLOSE:
+//
+//                    break;
+//            }
+//        }
 
     }
 
@@ -169,7 +177,8 @@ public class Bank {
     // Nimmt 2 Parameter an: Welches Konto? Wie viel?
     private void depositMoney(Account account, Customer customer, int amount) {
         account.deposit(amount);
-        System.out.println(amount + "€ has been deposited to the account of " + customer.getName() + " " + customer.getLastName() + ".");
+        System.out.println(amount + "€ has been deposited to the account of " +
+                customer.getName() + " " + customer.getLastName() + ". Kunden ID: " + customer.getCustomerID());
     }
 
     private void withdrawMoney(Account account, Customer customer, int amount) {
