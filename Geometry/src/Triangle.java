@@ -7,16 +7,20 @@ public class Triangle {
     private String name;
     private Scanner sc = new Scanner(System.in);
 
-    // Methoden
+    // Konstruktor
     public Triangle(String name) {
         this.name = name;
     }
+
+    // Methoden
     public void readAttributes() {
+
         System.out.println("Input for " + Colors.RED + name);
         System.out.print(Colors.YELLOW + "Height: " + Colors.RESET);
         // Height setzen
         height = sc.nextInt();
     }
+
     public void printTriangleCentered() {
         for (int i = 1; i <= height; i++) {
             for (int j = 1; j <= height - i; j++) {
@@ -38,9 +42,6 @@ public class Triangle {
             for (int j = 1; j <= i; j++) {
                 System.out.print("# ");
             }
-
-
-
             System.out.println();
         }
     }
