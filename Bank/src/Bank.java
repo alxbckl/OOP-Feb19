@@ -1,6 +1,9 @@
 // Importieren des Scanners
 import java.util.Scanner;
 
+// Importieren der Arraylist
+import java.util.ArrayList;
+
 public class Bank {
     // Attribute
     // Wir erinnern uns an die Deklaration von Variablen
@@ -12,11 +15,15 @@ public class Bank {
     Customer customer1 = new Customer();
     Customer customer2 = new Customer();
 
+    ArrayList<Customer> customers = new ArrayList<Customer>();
+
 
     // Konto Objekt
     Account account0 = new Account();
     Account account1 = new Account();
     Account account2 = new Account();
+
+    ArrayList<Account> accounts = new ArrayList<Account>();
 
     // Scanner
     Scanner sc = new Scanner(System.in);
@@ -115,6 +122,7 @@ public class Bank {
                     break;
                 case MENU:
 
+                    makeNewCustomer(new Customer(), "Peter", "Pan", 12);
                     break;
                 case NEWCUST:
 
@@ -147,6 +155,7 @@ public class Bank {
 
     private void makeNewCustomer(Customer customer, String name, String lastName, int customerID) {
         customer.initCustomer(name, lastName, customerID);
+        customers.add(customer);
     }
 
     private void makeNewAccount(Account account, int accountID, int customerID) {

@@ -33,7 +33,7 @@ public class Connection extends Thread{
     public void run() {
         try {
             // Open input and output streams
-            new Reciever(new BufferedReader(new InputStreamReader(connection.getInputStream()))).start();
+            new Reciever(new BufferedReader(new InputStreamReader(connection.getInputStream())), "Client").start();
             new Transmitter(new BufferedWriter(new OutputStreamWriter(connection.getOutputStream()))).start();
         }
         catch (Exception e) {

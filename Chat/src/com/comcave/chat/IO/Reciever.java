@@ -10,9 +10,11 @@ import static java.lang.System.out;
 public class Reciever extends Thread {
     private BufferedReader reciever;
     private String input;
+    private String name;
 
-    public Reciever(BufferedReader reciever) {
+    public Reciever(BufferedReader reciever, String name) {
         this.reciever = reciever;
+        this.name = name;
     }
 
     @Override
@@ -23,7 +25,7 @@ public class Reciever extends Thread {
                 input = reciever.readLine();
 
                 // Print it to the console
-                out.print(Colors.BLUE + "Client: " + Colors.RESET);
+                out.print(Colors.BLUE + name + ": " + Colors.RESET);
                 out.println(input);
 
                 // Check if the connection should be terminated

@@ -48,7 +48,7 @@ public class Client {
             // BufferedReader: Reads text from a character-input-stream
             // InputStreamReader: Reads bytes and decodes them into characters (Charset)
             // InputStream: Reads input as bytes
-            new Reciever(new BufferedReader(new InputStreamReader(connection.getInputStream()))).start();
+            new Reciever(new BufferedReader(new InputStreamReader(connection.getInputStream())), "Server").start();
         }
         catch (Exception e) {
             out.println(e);
