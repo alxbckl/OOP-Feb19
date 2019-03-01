@@ -1,0 +1,13 @@
+Aufgaben 01.03.19
+
+Wiederholen: 	Was ist eine ArrayList? 
+		Wie können wir damit Zahlen oder Strings abspeichern?
+		Wie können wir damit Objekte speichern?
+		https://stackoverflow.com/questions/3982550/creating-an-arraylist-of-objects
+
+Aufgabe: 	Erstellen Sie ein Programm Kurs mit den Klassen Teilnehmer und Kurs
+		Jeder Teilnehmer hat einen Vor und Nachnamen
+		Erstellen Sie in der Main Methode eine ArrayList aus Teilnehmern
+		Zusatz: Ordenen Sie den Kursen die entsprechenden Teilnehmer zu.
+
+Teamarbeit ist gefragt!
