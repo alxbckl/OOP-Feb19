@@ -9,8 +9,9 @@ public class MultiTransmitter extends Thread {
     private String output;
     private ArrayList<ServerTransmitter> transmitters;
 
-    public MultiTransmitter(ServerTransmitter transmitter) {
-        this.transmitters.add(transmitter);
+    public MultiTransmitter() {
+        this.transmitters = new ArrayList<ServerTransmitter>();
+        this.sc = new Scanner(System.in);
     }
 
     @Override

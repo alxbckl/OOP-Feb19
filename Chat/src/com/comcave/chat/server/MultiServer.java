@@ -1,5 +1,6 @@
 package com.comcave.chat.server;
 
+import com.comcave.chat.IO.MultiTransmitter;
 import com.comcave.chat.server.Connection;
 import com.comcave.tools.Colors;
 
@@ -23,8 +24,7 @@ public class MultiServer {
         // Define server, input and output streams
         ServerSocket listener = null;
         Socket connection;
-        BufferedReader reciever;
-        BufferedWriter transmitter;
+        MultiTransmitter multiTransmitter = new MultiTransmitter();
 
         String input;
         String output;
@@ -33,6 +33,7 @@ public class MultiServer {
         // Try to open a new socket
         try {
             listener = new ServerSocket(8080);
+            multiTransmitter = new MultiTransmitter();
         }
         catch (Exception e) {
             out.println(e);
@@ -42,12 +43,13 @@ public class MultiServer {
         // Try to accept new requests
         try {
             out.println(Colors.GREEN + "Server is waiting ..." + Colors.RESET);
+            multiTransmitter.start();
 
             // Wait for a connection and accept it
             // And open a new thread
             while(true) {
                 connection = listener.accept();
-                new Connection(connection, clientNumber++).start();
+                new Connection(connection, clientNumber++, multiTransmitter).start();
             }
         }
         catch (Exception e) {

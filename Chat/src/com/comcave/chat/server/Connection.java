@@ -20,9 +20,6 @@ import static java.lang.System.out;
 public class Connection extends Thread{
     private int clientNumber;
     private Socket connection;
-    private Scanner sc;
-    private String input;
-    private String output;
     private MultiTransmitter multiTransmitter;
 
     public Connection(Socket connection, int clientNumber, MultiTransmitter multiTransmitter) {

@@ -25,14 +25,6 @@ public class Lecture {
                     " " +
                     participants.get(i).getLastName());
         }
-      /*Kurs:           OOP
-        Kursteilnehmer: Ayane
-                        Anani
-                        Derin
-                        Findik
-                        Hägele
-                        */
-
     }
 
     public void setTeacher(String teacher) {
@@ -41,5 +33,9 @@ public class Lecture {
 
     public String getTeacher() {
         return teacher;
+    }
+
+    public String getName() {
+        return name;
     }
 }

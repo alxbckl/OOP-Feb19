@@ -18,11 +18,11 @@ public class Administration {
         createLecture("Objektorientierte Programmierung", "Böckle");
 
         // Teilnehmer und Kurs verbinden
-        connectStudent(studentsList.get(0), lecturesList.get(0));
-        connectStudent(studentsList.get(1), lecturesList.get(0));
+        connectStudent(studentsList.get(0), lecturesList.get(findLecture("Objektorientierte Programmierung")));
+        connectStudent(studentsList.get(1), lecturesList.get(findLecture("Objektorientierte Programmierung")));
 
         // Kurs und Teilnehmer auflisten
-        lecturesList.get(0).listParticipants();
+        lecturesList.get(findLecture("Objektorientierte Programmierung")).listParticipants();
 
 
         // Aufgabe: Neue Teilneher erstellen, neuen Kurs erstellen
@@ -36,11 +36,18 @@ public class Administration {
 
         createLecture("Netzwerktechnik", "Höpfle");
 
-        connectStudent(studentsList.get(4), lecturesList.get(1));
-        lecturesList.get(1).listParticipants();
+
+        connectStudent(studentsList.get(findStudent("Ferhat", "Derin")), lecturesList.get(findLecture("Netzwerktechnik")));
+        connect("Dawit", "Ayane", "Netzwerktechnik");
+
+        lecturesList.get(findLecture("Netzwerktechnik")).listParticipants();
+
+        studentsList.get(1).getName();
 
     }
     private void createStudent(String name, String lastName) {
+        Student student1 = new Student("Alexander", "Böckle");
+        student1.getName();
         studentsList.add(new Student(name, lastName));
     }
     private void createLecture(String name, String teacher) {
@@ -48,5 +55,28 @@ public class Administration {
     }
     private void connectStudent(Student participant, Lecture lecture) {
         lecture.addParticipant(participant);
+    }
+    private int findLecture(String lectureName) {
+        for(int i = 0; i < lecturesList.size(); i++) {
+            if(lecturesList.get(i).getName().equals(lectureName)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    private int findStudent(String name, String lastName) {
+        for(int i = 0; i < studentsList.size(); i++) {
+            if(studentsList.get(i).getName().equals(name) && studentsList.get(i).getLastName().equals(lastName)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    private void connect(String studentName, String studentLastName, String lectureName) {
+        connectStudent(studentsList.get(findStudent(studentName, studentLastName)), lecturesList.get(findLecture(lectureName)));
     }
 }
