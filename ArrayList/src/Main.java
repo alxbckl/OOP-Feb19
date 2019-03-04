@@ -14,7 +14,7 @@ public class Main {
 
         // ArrayList<Datentyp> name = new ArrayList();
         // Liste deklarieren
-        ArrayList<String> namen = new ArrayList();
+        ArrayList<String> namen = new ArrayList<String>();
         namen.add("Ali Anani");
         namen.add("Antonio Hägele");
         namen.add("Damit Ayane");

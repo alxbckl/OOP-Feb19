@@ -1,7 +1,5 @@
 package com.comcave.chat.server;
 
-import com.comcave.chat.IO.MultiTransmitter;
-import com.comcave.chat.IO.ServerTransmitter;
 import com.comcave.tools.Colors;
 
 import java.io.BufferedReader;
@@ -23,12 +21,10 @@ public class Connection extends Thread{
     private Scanner sc;
     private String input;
     private String output;
-    private MultiTransmitter multiTransmitter;
 
-    public Connection(Socket connection, int clientNumber, MultiTransmitter multiTransmitter) {
+    public Connection(Socket connection, int clientNumber) {
         this.clientNumber = clientNumber;
         this.connection = connection;
-        this.multiTransmitter = multiTransmitter;
 
         System.out.println("New connection with client " + Colors.CYAN + this.clientNumber + Colors.RESET + " at " + Colors.CYAN + connection.getInetAddress().getHostAddress() + Colors.RESET);
     }
@@ -38,7 +34,7 @@ public class Connection extends Thread{
         try {
             // Open input and output streams
             new Reciever(new BufferedReader(new InputStreamReader(connection.getInputStream())), "Client").start();
-            multiTransmitter.addTransmitter(new ServerTransmitter(new BufferedWriter(new OutputStreamWriter(connection.getOutputStream()))));
+            new Transmitter(new BufferedWriter(new OutputStreamWriter(connection.getOutputStream()))).start();
         }
         catch (Exception e) {
             System.out.println(e);
