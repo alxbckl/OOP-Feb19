@@ -4,7 +4,7 @@ public class Lecture {
     // Attribute
     private String name;
     private String teacher;
-    private ArrayList<Student> participants = new ArrayList<Student>();
+    private ArrayList<Student> participantsList = new ArrayList<Student>();
 
     // Konstruktor
     public Lecture(String name, String teacher) {
@@ -14,16 +14,23 @@ public class Lecture {
 
     // Methoden
     public void addParticipant(Student participant) {
-        participants.add(participant);
+        participantsList.add(participant);
+    }
+    public void removeParticipant(String name, String lastName) {
+        try {
+            participantsList.remove(findParticipant(name, lastName));
+        } catch (Exception e) {
+            // Keine Ausgabe
+        }
     }
 
     public void listParticipants() {
         System.out.println("Lecture:" + "\t" + Colors.GREEN + name + Colors.RESET);
-        for(int i = 0; i < participants.size(); i++) {
+        for(int i = 0; i < participantsList.size(); i++) {
             System.out.println("\t\t\t" +
-                    participants.get(i).getName() +
+                    participantsList.get(i).getName() +
                     " " +
-                    participants.get(i).getLastName());
+                    participantsList.get(i).getLastName());
         }
     }
 
@@ -37,5 +44,15 @@ public class Lecture {
 
     public String getName() {
         return name;
+    }
+
+    private int findParticipant(String name, String lastName) {
+        for(int i = 0; i < participantsList.size(); i++) {
+            if(participantsList.get(i).getName().equals(name) && participantsList.get(i).getLastName().equals(lastName)) {
+                return i;
+            }
+        }
+
+        return -1;
     }
 }

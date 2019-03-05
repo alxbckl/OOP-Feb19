@@ -42,7 +42,14 @@ public class Administration {
 
         lecturesList.get(findLecture("Netzwerktechnik")).listParticipants();
 
-        studentsList.get(1).getName();
+
+        lecturesList.get(findLecture("Objektorientierte Programmierung")).listParticipants();
+
+        removeStudent("Peter", "Pan");
+
+        lecturesList.get(findLecture("Objektorientierte Programmierung")).listParticipants();
+
+
 
     }
     private void createStudent(String name, String lastName) {
@@ -65,7 +72,6 @@ public class Administration {
 
         return -1;
     }
-
     private int findStudent(String name, String lastName) {
         for(int i = 0; i < studentsList.size(); i++) {
             if(studentsList.get(i).getName().equals(name) && studentsList.get(i).getLastName().equals(lastName)) {
@@ -75,7 +81,22 @@ public class Administration {
 
         return -1;
     }
+    private void removeStudent(String name, String lastName) {
+        // Student aus allen Lectures entfernen
+        // Schleife, um durch alle Lectures zu gehen
+        // Dann jeweils den Student aus der participantsList entfernen
+        for(int i = 0; i < lecturesList.size(); i++) {
+            lecturesList.get(i).removeParticipant(name, lastName);
+        }
 
+        // Student aus der studentList entfernen
+        try {
+            studentsList.remove(findStudent(name, lastName));
+        } catch (Exception e) {
+            System.out.println(Colors.RED + "Student is not existing!" + Colors.RESET);
+        }
+
+    }
     private void connect(String studentName, String studentLastName, String lectureName) {
         connectStudent(studentsList.get(findStudent(studentName, studentLastName)), lecturesList.get(findLecture(lectureName)));
     }
