@@ -1,4 +1,6 @@
 package Tiere.Katzen.Katzenarten;
 
-public class Tiger {
+import Tiere.Katzen.Katze;
+
+public class Tiger extends Katze {
 }

@@ -1,4 +1,7 @@
 package Tiere.Katzen;
 
-public class Katze {
+// Tier einbinden
+import Tiere.Tier;
+
+public class Katze extends Tier {
 }

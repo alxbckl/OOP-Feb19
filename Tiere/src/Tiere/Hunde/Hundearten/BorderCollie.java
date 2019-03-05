@@ -1,4 +1,6 @@
 package Tiere.Hunde.Hundearten;
 
-public class BorderCollie {
+import Tiere.Hunde.Hund;
+
+public class BorderCollie extends Hund {
 }

@@ -1,6 +1,11 @@
+import Tiere.Hunde.Hundearten.Dackel;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Dackel waldi = new Dackel();
+
+        System.out.println(waldi.beine);
+        waldi.belle();
     }
 }
