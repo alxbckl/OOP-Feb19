@@ -11,5 +11,13 @@ public class Main {
         // Auf Attribut arbeitetImKrankenhaus zugreifen
         // drJakob.arbeitetImKrankenhaus = true;
         // Wollen wir eigentlich nicht
+
+        drJakob.patientBehandeln();
+        drMeyer.patientBehandeln();
+
+        drJakob.patientBehandeln("Müller");
+        drMeyer.patientBehandeln("Max");
+
+        drJakob.patientBehandeln(5);
     }
 }

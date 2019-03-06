@@ -7,8 +7,9 @@ public class Chirurg extends Arzt {
     // Attribute
 
     // Methoden
+    @Override
     public void patientBehandeln() {
-        super.arbeitetImKrankenhaus = false;
+        System.out.println("Ich operiere!");
     }
     public void schneiden() {
 
