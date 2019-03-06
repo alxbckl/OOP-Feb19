@@ -10,6 +10,7 @@ public class InventoryManagement {
     // Methoden
     public void start() {
         // Neues Produkt hinzufügen
+        productList.add(1, iPhone);
 
     }
 
