@@ -8,6 +8,11 @@ public class Hausarzt extends Arzt{
     // Attribute
     private boolean machtHausbesuche;
 
+    // Konstruktor
+    public Hausarzt(String vorName, String nachName) {
+        super(vorName, nachName);
+    }
+
     // Methode
     void ratGeben() {
 

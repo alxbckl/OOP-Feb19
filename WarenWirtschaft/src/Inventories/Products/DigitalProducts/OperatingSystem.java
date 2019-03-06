@@ -1,4 +1,6 @@
 package Inventories.Products.DigitalProducts;
 
-public class OperatingSystem {
+import Inventories.Products.DigitalProduct;
+
+public class OperatingSystem extends DigitalProduct {
 }

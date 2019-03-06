@@ -1,4 +1,6 @@
 package Inventories.Products.PhysicalProducts;
 
-public class Phone {
+import Inventories.Products.PhysicalProduct;
+
+public class Phone extends PhysicalProduct {
 }
