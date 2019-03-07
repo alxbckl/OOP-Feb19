@@ -1,6 +1,9 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        // Objekte von Apfelsaft, Kiwisaft, Tequila und Wodka erstellen
+        // GebeInfo aufrufen
+        
+
     }
 }
