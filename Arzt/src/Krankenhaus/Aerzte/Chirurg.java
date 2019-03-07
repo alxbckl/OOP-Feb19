@@ -26,8 +26,15 @@ public class Chirurg extends Arzt {
 
     @Override
     public void patientBehandeln(String name) {
-        System.out.println("Test");
+        System.out.println("Ich operiere " + name + ".");
     }
+
+    @Override
+    public void patientBehandeln(int anzahl) {
+        System.out.println("Ich operiere " + anzahl + " Patienten!");
+    }
+
+
     public void schneiden() {
 
     }

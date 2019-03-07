@@ -1,5 +1,6 @@
 import Krankenhaus.Aerzte.Chirurg;
 import Krankenhaus.Aerzte.Hausarzt;
+import Krankenhaus.Arzt;
 
 public class Main {
 
@@ -14,5 +15,15 @@ public class Main {
 
         drJakob.willkommen();
         drMeyer.willkommen();
+
+        System.out.println();
+
+        drJakob.patientBehandeln();
+        drMeyer.patientBehandeln();
+
+        // Von abstrakten Klassen kann KEIN Objekt erstellt werden
+        // Arzt test = new Arzt();
+
+
     }
 }

@@ -14,6 +14,12 @@ public class Hausarzt extends Arzt{
     }
 
     // Methode
+    @Override
+    public void patientBehandeln() {
+        System.out.println("Ich nehme Ihnen zuerst Blut ab!");
+    }
+
+
     void ratGeben() {
 
     }
