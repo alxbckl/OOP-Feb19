@@ -28,8 +28,8 @@ public class Apfelsaft extends Saft {
                 "Dieser Apfelsaft ist " +
                 (trueb ? "naturtrüb" : "klar") +
                 " und hat " +
-                (super.hatFruchtFleisch ? "" : "kein") +
-                " Fruchtfleisch.");
+                (super.hatFruchtFleisch ? "" : "kein ") +
+                "Fruchtfleisch.");
 
         System.out.println("Das Volumen beträgt " + super.volumen + "ml.");
     }
