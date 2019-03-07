@@ -21,13 +21,17 @@ public class InventoryManagement {
 
     ArrayList<Product> productList = new ArrayList<Product>();
 
-    ArrayList<Object> test = new ArrayList<Object>();
+    ArrayList test = new ArrayList<>();
+
 
     // Methoden
     public void start() {
+        test.add(new Linux());
+
+
         test.add(new SmartPhone());
 
-        ((SmartPhone) test.get(0)).test();
+        ((SmartPhone)test.get(1)).test();
 
 
         // Neues Produkt hinzufügen
@@ -52,7 +56,7 @@ public class InventoryManagement {
         System.out.println(((SmartPhone) getProduct(0)).getClass());
         System.out.println(getProduct(0).getClass());
 
-        ObjectConverter.convert(getProduct(0), (getProduct(0)).getClass()).test();
+        //ObjectConverter.convert(getProduct(0), (getProduct(0)).getClass()).test();
         System.out.println(getProduct(0).getClass());
 
 

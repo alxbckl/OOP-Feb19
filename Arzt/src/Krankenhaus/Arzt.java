@@ -27,7 +27,6 @@ public abstract class Arzt {
 
 
     // Methoden
-
     public abstract void patientBehandeln();
     public abstract void patientBehandeln(String name);
     public abstract void patientBehandeln(int anzahl);
