@@ -12,11 +12,6 @@ public class Chirurg extends Arzt {
         super(vorName, nachName);
     }
 
-    public Chirurg(int i, int b) {
-
-    }
-
-
 
     // Methoden
     @Override

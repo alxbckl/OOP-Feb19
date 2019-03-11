@@ -13,14 +13,6 @@ public abstract class Arzt {
         this.nachName = nachName;
     }
 
-    public Arzt(int i) {
-
-    }
-
-    public Arzt(int i, int b) {
-
-    }
-
     public Arzt() {
 
     }

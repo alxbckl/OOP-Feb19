@@ -19,6 +19,17 @@ public class Hausarzt extends Arzt{
         System.out.println("Ich nehme Ihnen zuerst Blut ab!");
     }
 
+    @Override
+    public void patientBehandeln(String name) {
+        System.out.println("Ich nehme " + name + " zuerst Blut ab!");
+    }
+
+    @Override
+    public void patientBehandeln(int anzahl) {
+        System.out.println("Ich nehme " + anzahl + " mal Blut ab!");
+    }
+
+
 
     void ratGeben() {
 
