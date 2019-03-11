@@ -23,6 +23,8 @@ public abstract class Arzt {
     public abstract void patientBehandeln(String name);
     public abstract void patientBehandeln(int anzahl);
 
+
+
 //    public void patientBehandeln() {
 //        System.out.println("Ich bin in einer Behandlung!");
 //    }
@@ -67,5 +69,8 @@ public abstract class Arzt {
         System.out.println("Willkommen " + name + " in der Praxis von " + this.vorName + " " + this.nachName + "!");
     }
 
+    public String getName() {
+        return (this.vorName + " " + this.nachName);
+    }
 
 }

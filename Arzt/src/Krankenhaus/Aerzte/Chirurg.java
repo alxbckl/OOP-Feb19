@@ -12,6 +12,13 @@ public class Chirurg extends Arzt {
         super(vorName, nachName);
     }
 
+    public Chirurg() {}
+
+    public void setName(String vorName, String nachName) {
+        super.nachName = nachName;
+        super.vorName = vorName;
+    }
+
 
     // Methoden
     @Override

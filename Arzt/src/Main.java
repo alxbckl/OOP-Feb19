@@ -29,7 +29,10 @@ public class Main {
         // Arzt test = new Arzt();
 
 
-        Chirurg test = new Chirurg("dftg", "fghk");
+        Chirurg test = new Chirurg();
+        System.out.println(test.getName());
+
+        System.out.println(test.getName());
 
 
 
