@@ -1,8 +1,9 @@
 package Zoo.Tiere.Hunde;
 
+import Zoo.Tiere.Haustier;
 import Zoo.Tiere.Hund;
 
-public class BorderCollie extends Hund {
+public class BorderCollie extends Hund implements Haustier {
     // Hüte Schafe
 
     public void hueteSchafe() {
