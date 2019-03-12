@@ -1,7 +1,8 @@
-package Tiere;
+package Zoo.Tiere;
 
 // Superklasse Tier einbinden
-import Tier;
+
+import Zoo.Tier;
 
 // Hund von Tier erben lassen => extends Tier
 public class Hund extends Tier {

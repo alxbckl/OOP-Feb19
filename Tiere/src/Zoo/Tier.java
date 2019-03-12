@@ -1,3 +1,5 @@
+package Zoo;
+
 public class Tier {
     // Attribute
     public String schauze = "Ich habe eine Schnauze";

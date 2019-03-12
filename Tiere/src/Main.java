@@ -1,10 +1,11 @@
 // Dackel und Schäferhund einbinden
-import Tiere.Hunde.BorderCollie;
-import Tiere.Hunde.Dackel;
-import Tiere.Hunde.Schaeferhund;
+import Zoo.Tiere.Hunde.BorderCollie;
+import Zoo.Tiere.Hunde.Dackel;
+import Zoo.Tiere.Hunde.Schaeferhund;
 
-import Tiere.Katzen.Perser;
-import Tiere.Katzen.Tiger;
+import Zoo.Tiere.Katzen.Perser;
+import Zoo.Tiere.Katzen.Tiger;
+import Zoo.Tier;
 
 import java.util.ArrayList;
 

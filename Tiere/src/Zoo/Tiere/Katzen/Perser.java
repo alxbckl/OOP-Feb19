@@ -1,6 +1,6 @@
-package Tiere.Katzen;
+package Zoo.Tiere.Katzen;
 
-import Tiere.Katze;
+import Zoo.Tiere.Katze;
 
 public class Perser extends Katze {
     public void geheRaus() {

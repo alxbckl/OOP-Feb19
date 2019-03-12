@@ -1,6 +1,6 @@
-package Tiere.Hunde;
+package Zoo.Tiere.Hunde;
 
-import Tiere.Hund;
+import Zoo.Tiere.Hund;
 
 public class BorderCollie extends Hund {
     // Hüte Schafe

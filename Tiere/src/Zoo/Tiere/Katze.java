@@ -1,6 +1,8 @@
-package Tiere;
+package Zoo.Tiere;
 
 // Tier einbinden
+
+import Zoo.Tier;
 
 public class Katze extends Tier {
     public String personal;
