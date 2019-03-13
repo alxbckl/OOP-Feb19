@@ -14,33 +14,55 @@ public abstract class Arzt {
     }
 
     public Arzt() {
-
+        System.out.println("Ein neuer Arzt wurde angelegt!");
     }
 
 
     // Methoden
-    public abstract void patientBehandeln();
-    public abstract void patientBehandeln(String name);
-    public abstract void patientBehandeln(int anzahl);
+//    public abstract void patientBehandeln();
+//    public abstract void patientBehandeln(String name);
+//    public abstract void patientBehandeln(int anzahl);
 
 
 
-//    public void patientBehandeln() {
-//        System.out.println("Ich bin in einer Behandlung!");
-//    }
-//
-//    public void patientBehandeln(String name) {
-//        System.out.println("Ich behandle den Patienten " + name);
-//    }
-//
-//    public void patientBehandeln(int anzahl) {
-//        System.out.println("Ich behandle gerade " + anzahl + " Patienten.");
-//    }
-//
-//    public int patientBehandlen(int anzahl) {
-//        System.out.println("Test rückgabe");
-//        return anzahl;
-//    }
+    public void patientBehandeln() {
+        System.out.println("Ich bin in einer Behandlung!");
+    }
+
+    public void patientBehandeln(String name) {
+        System.out.println("Ich behandle den Patienten " + name);
+    }
+
+    public void patientBehandeln(int anzahl) {
+        System.out.println("Ich behandle gerade " + anzahl + " Patienten.");
+    }
+
+    public int patientBehandlen(int anzahl) {
+        System.out.println("Test rückgabe");
+        return anzahl;
+    }
+
+
+    public void patientBehandlen(String name, int anzahl) {
+        System.out.println("Test 1");
+    }
+
+    public void patientBehandlen(int anzahl, String name) {
+        System.out.println("Test 2");
+    }
+
+
+    public void test() {
+        patientBehandeln(5);
+
+        int zahl = patientBehandlen(5);
+
+
+
+
+
+
+    }
 
     // Methoden schreiben:
     // schreibeRezept() - Ausgabe: Bitte Medikament und Dosierung angeben
@@ -72,5 +94,7 @@ public abstract class Arzt {
     public String getName() {
         return (this.vorName + " " + this.nachName);
     }
+
+
 
 }

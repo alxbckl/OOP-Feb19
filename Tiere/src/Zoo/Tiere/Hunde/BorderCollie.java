@@ -13,4 +13,21 @@ public class BorderCollie extends Hund implements Haustier {
         super.belle();
         System.out.println("Ich hüte deine Schafe!");
     }
+
+    // Methoden aus Interface übernehmen
+    public void macheMaennchen() {
+        System.out.println("Hund macht Männchen!");
+    }
+
+    public void willLeckerli() {
+        System.out.println("Gib mir Pedigree ;)");
+    }
+
+    public void kraulenLassen() {
+        System.out.println("Kraul meinen Bauch ;)");
+    }
+
+    public String gebeName() {
+        return "Arco";
+    }
 }

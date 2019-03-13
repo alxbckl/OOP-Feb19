@@ -10,7 +10,19 @@ public class Perser extends Katze implements Haustier{
 
     // Methoden aus Interface übernehmen
     public void macheMaennchen() {
-        System.out.println("Hund macht Männchen!");
+        System.out.println("Katze macht Männchen!");
+    }
+
+    public void willLeckerli() {
+        System.out.println("Gib mir Whiskas ;)");
+    }
+
+    public void kraulenLassen() {
+        System.out.println("Schnurr Schnurr");
+    }
+
+    public String gebeName() {
+        return "Kitti";
     }
 
 }
